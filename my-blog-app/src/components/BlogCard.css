@@ -1,0 +1,152 @@
+/* my-blog-app/src/components/BlogCard.css */
+
+.blog-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Slightly smaller min-width for more cards per row */
+  gap: 30px; /* Increased gap for breathing room */
+  padding: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.blog-card {
+  background-color: white;
+  border: 1px solid #e0e0e0; /* Finer border */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Softer, larger shadow */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Image/Placeholder Area */
+.blog-card-image {
+  width: 100%;
+  height: 180px; /* Consistent height */
+  object-fit: cover;
+  border-bottom: 1px solid #f0f0f0; /* Lighter separator */
+  display: block; /* Remove extra space below image */
+}
+
+.blog-card-no-image {
+  width: 100%;
+  height: 180px;
+  background-color: #f0f2f5; /* Light grey background for no image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.blog-card-image-placeholder {
+  width: 80px; /* Size for the generic icon */
+  height: 80px;
+  object-fit: contain;
+  opacity: 0.6; /* Slightly faded */
+  margin-bottom: 10px;
+}
+
+.no-image-text {
+  color: #888;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+
+.blog-card-content {
+  padding: 20px; /* More padding */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-card-title {
+  font-size: 1.4em; /* Slightly smaller title for better fit */
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.blog-card-description {
+  font-size: 0.9em; /* Slightly smaller description */
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px; /* More space below */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.blog-card-meta {
+  font-size: 0.75em; /* Smaller meta text */
+  color: #999;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.blog-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px; /* Increased gap */
+  padding: 15px 20px; /* Consistent padding */
+  border-top: 1px solid #f0f0f0;
+  background-color: #fdfdfd; /* Very light background for action area */
+}
+
+.blog-card-actions .edit-button,
+.blog-card-actions .delete-button,
+.blog-card-actions .view-button {
+  padding: 9px 18px; /* Slightly larger buttons */
+  border: none;
+  border-radius: 6px; /* Slightly more rounded */
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-card-actions .view-button {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.blog-card-actions .view-button:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.blog-card-actions .edit-button {
+  background-color: #ffc107; /* Orange/Yellow */
+  color: #333;
+}
+
+.blog-card-actions .edit-button:hover {
+  background-color: #e0a800;
+  transform: translateY(-1px);
+}
+
+.blog-card-actions .delete-button {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+.blog-card-actions .delete-button:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
